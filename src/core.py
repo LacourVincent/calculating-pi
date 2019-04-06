@@ -5,8 +5,8 @@ N = 1000  # Number of points of the approximation
 R = 1  # Radius of the circle
 
 angles = np.linspace(0, 2 * np.pi, N+1)
-points = [*[(R*np.cos(angle), R*np.sin(angle))
-            for angle in angles], (1, 0)]
+points = [(R*np.cos(angle), R*np.sin(angle))
+          for angle in angles]
 
 distances = []
 for i in range(len(points)-1):
