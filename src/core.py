@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import random as r
 
 
 def getPiFromPolygonalApproximation(N, R):
@@ -13,6 +14,16 @@ def getPiFromPolygonalApproximation(N, R):
         distance = np.hypot(p2[0] - p1[0], p2[1] - p1[1])
         distances.append(distance)
     return sum(distances) / (2 * R)
+
+
+def getPiFromMonteCarlo(N):
+    inside = 0
+    for i in range(0, N):
+        x = r.random()
+        y = r.random()
+        if (np.hypot(x, y) < 1.0):
+            inside += 1
+    return float(inside/N)*4
 
 
 def getPiFromGregoryLeibniz(N):
@@ -42,12 +53,30 @@ def plotFigure(points):
     plt.close()
 
 
+def plotFigureMonteCarlo(inside, outside):
+    x1 = [point[0] for point in inside]
+    y1 = [point[1] for point in inside]
+    x2 = [point[0] for point in outside]
+    y2 = [point[1] for point in outside]
+    plt.plot(x1, y1, "r.")
+    plt.plot(x2, y2, "b.")
+    plt.title("Approximation of $\pi$ using Monte Carlo method", fontsize=15)
+    plt.xlabel("X")
+    plt.ylabel("Y")
+    plt.show()
+    plt.close()
+
+
 piFromPolygonalApproximation = getPiFromPolygonalApproximation(1000, 1)
+piFromMonteCarlo = getPiFromMonteCarlo(1000)
 piFromGregoryLeibniz = getPiFromGregoryLeibniz(1000)
 piFromNilakantha = getPiFromNilakantha(1000)
 
 print("Polygonal Appproximation:")
 print("π = {}".format(piFromPolygonalApproximation))
+
+print("Monte Carlo Appproximation:")
+print("π = {}".format(piFromMonteCarlo))
 
 print("Gregory Leibniz Serie:")
 print("π = {}".format(piFromGregoryLeibniz))
