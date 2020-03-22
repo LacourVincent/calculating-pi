@@ -40,11 +40,9 @@ Another series which converges more quickly is the Nilakantha Series which was d
 
 ## References
 
-[Calculating pi](http://www.mathscareers.org.uk/article/calculating-pi/)
-
-[How to Calculate Pi](https://www.wikihow.com/Calculate-Pi)
-
-[Estimating Pi Monte Carlo](https://www.geeksforgeeks.org/estimating-value-pi-using-monte-carlo/)
+- [Calculating pi](http://www.mathscareers.org.uk/article/calculating-pi/)
+- [How to Calculate Pi](https://www.wikihow.com/Calculate-Pi)
+- [Estimating Pi Monte Carlo](https://www.geeksforgeeks.org/estimating-value-pi-using-monte-carlo/)
 
 
 ## LICENSE
